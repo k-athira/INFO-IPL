@@ -1,2 +1,2 @@
 # INFO-IPL
-All about Indian Premier League 
+InfoGraphics on IPL
