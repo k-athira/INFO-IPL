@@ -1,0 +1,15 @@
+.HomePage { 
+    width: 100%;
+} 
+.ContentHomePage { 
+    display: grid; 
+    grid-template-columns: 3fr 1fr; 
+    grid-gap: 20px; 
+    border: 1px solid rgb(255, 252, 252); 
+    width: 100%;
+}
+
+.Grid { 
+    margin: 10px; 
+    border: 1px solid rgb(247, 247, 247); 
+}
