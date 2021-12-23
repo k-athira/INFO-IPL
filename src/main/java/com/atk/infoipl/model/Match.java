@@ -1,28 +1,37 @@
 package com.atk.infoipl.model;
 
-
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Match {
     
     @Id
-    private String id;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+
+    @OneToOne(targetEntity = Team.class)
     private Team team_1;
+
+    @OneToOne(targetEntity = Team.class)
     private Team team_2;
 
     private Date date;
-    private String Venue;
+    private String venue;
 
+    @OneToOne(targetEntity = Team.class)
     private Team toss;
     private String optedFor;
 
     private String first_inng_score;
     private String sec_inng_score;
 
+    @OneToOne(targetEntity = Team.class)
     private Team won;
     private String man_of_the_match;
     
@@ -33,7 +42,7 @@ public class Match {
         this.team_1 = team_1;
         this.team_2 = team_2;
         this.date = date;
-        Venue = venue;
+        this.venue = venue;
         this.toss = toss;
         this.optedFor = optedFor;
         this.first_inng_score = first_inng_score;
@@ -41,6 +50,10 @@ public class Match {
         this.won = won;
         this.man_of_the_match = man_of_the_match;
         this.result = result;
+    }
+
+    public Long getId(){
+        return id;
     }
 
     public Team getTeam_1() {
@@ -68,11 +81,11 @@ public class Match {
     }
 
     public String getVenue() {
-        return Venue;
+        return venue;
     }
 
     public void setVenue(String venue) {
-        Venue = venue;
+        this.venue = venue;
     }
 
     public Team getToss() {

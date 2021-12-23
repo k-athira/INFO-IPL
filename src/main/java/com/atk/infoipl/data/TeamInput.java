@@ -1,16 +1,6 @@
-package com.atk.infoipl.model;
+package com.atk.infoipl.data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
-public class Team {
-
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+public class TeamInput {
     private Long external_id;
     private String codeName;
     private String fullName;
@@ -18,7 +8,8 @@ public class Team {
     private String intro_year;
     private String last_played_year;
 
-    public Team(Long external_id, String codeName, String fullName, String status, String intro_year, String last_played_year) {
+    public TeamInput(Long external_id, String codeName, String fullName, String status, String intro_year,
+            String last_played_year) {
         this.external_id = external_id;
         this.codeName = codeName;
         this.fullName = fullName;
@@ -27,24 +18,13 @@ public class Team {
         this.last_played_year = last_played_year;
     }
 
-    public Team() {
-    }
-
-    public Long getId(){
-        return id;
-    }
-
     public Long getExternal_id() {
         return external_id;
     }
 
-
-
     public void setExternal_id(Long external_id) {
         this.external_id = external_id;
     }
-
-
 
     public String getCodeName() {
         return codeName;
@@ -87,7 +67,6 @@ public class Team {
     }
 
     
+    
 
-    
-    
 }
