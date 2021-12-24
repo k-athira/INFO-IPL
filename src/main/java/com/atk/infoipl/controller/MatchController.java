@@ -52,19 +52,16 @@ public class MatchController {
         Match match = matchRepository.findById(id)
             .orElseThrow( ()-> new ResourceNotFoundException("match Not Found"));
 
-        match.setTeam_1(newMatch.getTeam_1());
-        match.setTeam_2(newMatch.getTeam_2());
+        match.setTeam1(newMatch.getTeam1());
+        match.setTeam2(newMatch.getTeam2());
 
         match.setDate(newMatch.getDate());
         match.setVenue(newMatch.getVenue());
 
-        match.setToss(newMatch.getToss());
+        match.setTossWinner(newMatch.getTossWinner());
         match.setOptedFor(newMatch.getOptedFor());
-
-        match.setFirst_inng_score(newMatch.getFirst_inng_score());
-        match.setSec_inng_score(newMatch.getSec_inng_score());
         
-        match.setWon(newMatch.getWon());
+        match.setWinner(newMatch.getWinner());
         match.setMan_of_the_match(newMatch.getMan_of_the_match());
         
         match.setResult(newMatch.getResult());

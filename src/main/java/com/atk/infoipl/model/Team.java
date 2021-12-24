@@ -9,57 +9,97 @@ import javax.persistence.Id;
 public class Team {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private Long external_id;
-    private String codeName;
-    private String fullName;
+    
+    private String name;
     private String status;
     private String intro_year;
     private String last_played_year;
+    private int totalMatch;
+    private int totalWins;
+    private int noLosses;
+    private int noDraw;
 
-    public Team(Long external_id, String codeName, String fullName, String status, String intro_year, String last_played_year) {
-        this.external_id = external_id;
-        this.codeName = codeName;
-        this.fullName = fullName;
+    public Team() {
+
+    }
+
+    
+
+    public Team(String name, String status, String intro_year, String last_played_year, int totalMatch, int totalWins,
+            int noLosses, int noDraw) {
+        this.name = name;
         this.status = status;
         this.intro_year = intro_year;
         this.last_played_year = last_played_year;
+        this.totalMatch = totalMatch;
+        this.totalWins = totalWins;
+        this.noLosses = noLosses;
+        this.noDraw = noDraw;
     }
 
-    public Team() {
+    
+
+    
+    public int getTotalMatch() {
+        return totalMatch;
     }
 
-    public Long getId(){
+
+
+    public void setTotalMatch(int totalMatch) {
+        this.totalMatch = totalMatch;
+    }
+
+
+
+    public int getTotalWins() {
+        return totalWins;
+    }
+
+
+
+    public void setTotalWins(int totalWins) {
+        this.totalWins = totalWins;
+    }
+
+
+
+    public int getNoLosses() {
+        return noLosses;
+    }
+
+
+
+    public void setNoLosses(int noLosses) {
+        this.noLosses = noLosses;
+    }
+
+
+
+    public int getNoDraw() {
+        return noDraw;
+    }
+
+
+
+    public void setNoDraw(int noDraw) {
+        this.noDraw = noDraw;
+    }
+
+
+
+    public Long getId() {
         return id;
     }
 
-    public Long getExternal_id() {
-        return external_id;
+    public String getName() {
+        return name;
     }
 
-
-
-    public void setExternal_id(Long external_id) {
-        this.external_id = external_id;
-    }
-
-
-
-    public String getCodeName() {
-        return codeName;
-    }
-
-    public void setCodeName(String codeName) {
-        this.codeName = codeName;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getStatus() {
@@ -85,9 +125,7 @@ public class Team {
     public void setLast_played_year(String last_played_year) {
         this.last_played_year = last_played_year;
     }
-
     
-
-    
+        
     
 }

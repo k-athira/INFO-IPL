@@ -55,11 +55,11 @@ public class TeamController {
         Team team = teamRepository.findById(id)
             .orElseThrow( ()-> new ResourceNotFoundException("Team Not Found"));
 
-        team.setCodeName(newTeam.getCodeName());
-        team.setFullName(newTeam.getFullName());
+        team.setName(newTeam.getName());
         team.setIntro_year(newTeam.getIntro_year());
         team.setLast_played_year(newTeam.getLast_played_year());
         team.setStatus(newTeam.getStatus());
+
         return this.teamRepository.save(team);
     }
 

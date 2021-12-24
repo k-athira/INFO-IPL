@@ -1,11 +1,5 @@
-package com.atk.infoipl.data;
+package com.atk.infoipl.batchDataLoad;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.persistence.EntityManager;
-
-import com.atk.infoipl.model.Team;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,11 +16,8 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 
     private static final Logger log = LoggerFactory.getLogger(JobCompletionNotificationListener.class);
 
-    private final EntityManager em;
-
     @Autowired
-    public JobCompletionNotificationListener(EntityManager em) {
-        this.em = em;
+    public JobCompletionNotificationListener() {
     }
 
     @Override
@@ -36,15 +27,15 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
         if(jobExecution.getStatus() == BatchStatus.COMPLETED){
             log.info("Job Finished");
 
-            Map<String, Team> teamData = new HashMap<>();
-            em.createQuery("SELECT * FROM TEAM", Object[].class)
+            /*Map<String, Team> teamData = new HashMap<>();
+            em.createQuery("SELECT EXTERNAL_ID, CODE_NAME, FULL_NAME, STATUS, INTRO_YEAR, LAST_PLAYED_YEAR FROM TEAM", Object[].class)
                 .getResultList()
                 .stream()
-                .map( e-> new Team((long) e[0], (String) e[1], (String) e[2], (String) e[3], (String) e[4], (String) e[4]))
+                .map( e-> new Team((String) e[0], (String) e[1], (String) e[2], (String) e[3], (String) e[4], (String) e[4]))
                 .forEach(team -> teamData.put(team.getFullName(), team));
 
             
-                teamData.values().forEach(team -> System.out.println(team));
+                teamData.values().forEach(team -> System.out.println(team));*/
 
         }
 
