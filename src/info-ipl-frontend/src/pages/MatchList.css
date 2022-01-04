@@ -1,0 +1,8 @@
+.match-list-container {    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    width: 1100px;
+    margin: auto;
+}

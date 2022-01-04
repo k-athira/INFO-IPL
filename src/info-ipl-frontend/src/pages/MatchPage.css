@@ -1,0 +1,51 @@
+.match-detail-complete-card {
+    justify-content: center;
+    width: 980px;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 2px 20px rgba(19, 18, 18, 0.1);
+	overflow: hidden;
+}
+
+.complete-card-team-details{
+    background-color: #B0C4DE;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    font-size: 25px;
+    height: 100px;
+}
+
+.complete-card-match-result {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: #B0C4DE;
+}
+
+.winner-team {
+    color: rgb(211, 22, 32);
+}
+
+.add-match-details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    background-color: #C0C0C0;
+    
+}
+
+.team-link {
+    color: rgb(0, 0, 0);
+}
+
+.team-link:hover {
+    color: #00F
+ }

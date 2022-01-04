@@ -1,19 +1,17 @@
 import './HeaderComponent.css';
+import infoipllogo from '../new_logo_2022_Jan.png'
 
 import React, { Component } from "react";
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class HeaderComponent extends Component {
     render() {
         return(
-            <div className='HeaderComponent'>
-                <nav>
-                    <NavLink exact activeClassName='active' to="/">
-                        <div className='logo_main'>info.ipl</div>
-                    </NavLink>
-                </nav>
-            </div>
-            
+            <div className='header'>
+                <Link to='/' className='logo'>
+                    <img src={infoipllogo} alt='info-ipl-logo'></img>
+                </Link>
+            </div>            
         );
     }
     

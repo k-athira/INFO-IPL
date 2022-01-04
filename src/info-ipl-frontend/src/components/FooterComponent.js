@@ -5,7 +5,7 @@ class FooterComponent extends Component {
     render() {
         return(
             <div className="FooterComponent">
-                <p> Contact Us</p>
+                <p>Copyright &copy; info.ipl 2020</p>
             </div>
         );
     }  

@@ -1,0 +1,40 @@
+.team-card {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	width: 280px;
+}
+
+.team-card-header {
+	height: 150px;
+	width: 100%;
+	background: #bee1f7
+}
+
+.team-card-body {
+	min-height: 200px;
+	margin: auto;
+}
+
+.team-name {
+	padding: 15px;
+}
+
+.team-info {
+	padding: 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-items: center;
+	margin: auto;
+	gap: 10px;
+}
+
+.other-team-link {
+	color: #FFF;
+}
+
+.other-team-link:hover {
+	color: #00F
+ }

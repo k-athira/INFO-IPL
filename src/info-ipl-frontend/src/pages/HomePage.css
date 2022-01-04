@@ -1,15 +1,32 @@
-.HomePage { 
-    width: 100%;
-} 
-.ContentHomePage { 
-    display: grid; 
-    grid-template-columns: 3fr 1fr; 
-    grid-gap: 20px; 
-    border: 1px solid rgb(255, 252, 252); 
-    width: 100%;
+.home-page {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: auto;
 }
 
-.Grid { 
-    margin: 10px; 
-    border: 1px solid rgb(247, 247, 247); 
+.home-page-nav-bar {
+    width: 1000px;
+}
+
+.home-ipl {
+    margin-top: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 2px 20px rgba(5, 5, 5, 0.1);
+}
+
+.home-ipl-about{
+    width: 940px;
+    margin-top: 20px;
+}
+
+.home-first-tile {
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+    width: 940px;
 }

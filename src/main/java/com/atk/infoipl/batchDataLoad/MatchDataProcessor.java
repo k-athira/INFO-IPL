@@ -10,12 +10,15 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match>{
     
     @Override
     public Match process(MatchInput item) throws Exception {
+
         Match match = new Match();
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");  
         match.setDate(dateFormat.parse(item.getDate()));
 
         match.setMan_of_the_match(item.getPlayer_of_match());
         match.setOptedFor(item.getToss_decision());
+
         match.setResult(item.getResult());
         match.setResultMargin(item.getResult_margin());
 
@@ -24,7 +27,6 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match>{
 
         match.setTossWinnerName(item.getToss_winner());
         match.setWinnerName(item.getWinner());
-
         match.setVenue(item.getVenue());
 
         return match;

@@ -1,0 +1,33 @@
+.team-name {
+    margin-bottom: 10px;
+    font-style: normal;
+}
+
+.team-stat {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    background-color: #bee1f7;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.team-radial-chart {
+    padding-top: 30px;
+}
+
+.stat-details {
+    font-size: 30px;
+    padding-left: 10px;
+    padding-top: 30px;
+}
+
+.latest-match-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.latest-match {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}

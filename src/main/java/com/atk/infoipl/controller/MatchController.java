@@ -9,13 +9,17 @@ import com.atk.infoipl.repository.MatchRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin
+@RestController
 public class MatchController {
     private MatchRepository matchRepository;
 
@@ -30,9 +34,28 @@ public class MatchController {
         return this.matchRepository.save(match);
     }
 
+    @GetMapping("/team/{name}/latestMatches/")
+    public ResponseEntity<List<Match>> getMatchByTeam(@PathVariable(value = "name") String name){
+        int count = 5;
+        return ResponseEntity.ok(
+            this.matchRepository.findLatestMatchesByTeam(name, count)
+        );
+    }
+
+    @GetMapping("/matches/latest")
+    public ResponseEntity<List<Match>> getAllMatches(){
+        int count = 10;
+        return ResponseEntity.ok(
+            this.matchRepository.findLatestMatches(count)
+        );
+    }
+
+
+    //////////////////////////////////////////////////////////
+
     // get all match
     @GetMapping("/match/all")
-    public ResponseEntity<List<Match>> getmatchs(){
+    public ResponseEntity<Iterable<Match>> getmatchs(){
         return ResponseEntity.ok(
             this.matchRepository.findAll()
         );
@@ -41,8 +64,8 @@ public class MatchController {
     //get match by id
     @GetMapping("/match/{id}")
     public ResponseEntity<Match> getmatch(@PathVariable(value = "id") String id){
-        Match match = matchRepository.findById(id)
-            .orElseThrow( ()-> new ResourceNotFoundException("match Not Found"));
+        Long long_id = Long.parseLong(id);
+        Match match = matchRepository.findById(long_id);
         return ResponseEntity.ok(match);
     }
 

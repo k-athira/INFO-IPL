@@ -1,0 +1,50 @@
+.match-won-card {
+    background-color: rgb(37, 145, 34);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 250px;
+    overflow: hidden;
+    color: rgb(252, 252, 252);
+}
+
+.match-lost-card {
+    background-color: rgb(197, 18, 18);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 250px;
+    overflow: hidden;
+    color: rgb(252, 252, 252);
+}
+
+.vs {
+    font-size: 20px;
+    padding-left:10px;
+    padding-right: 10px;
+}
+
+.other-team-name {
+    font-size: 25px;
+    font-style: italic;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.match-venue {
+    font-size: 13px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.match-date {
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.match-result {
+    font-size: 13px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

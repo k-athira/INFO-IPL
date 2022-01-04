@@ -1,0 +1,36 @@
+.match-brief-card {
+    background-color: #FFE4E1;
+    border-radius: 10px;
+    padding : 10px;
+    height: 100px;
+}
+
+.team-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin: auto;
+    font-size: 20px;
+    height: 40px;
+}
+
+.match-brief-result {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    color: darksalmon;
+    height: 25px;
+}
+
+.details-link {
+    text-align: center;
+    font-size: 15px;
+    color: rgb(192, 21, 21);
+}
+
+.details-link-link {
+    color: crimson;
+}
+
+.details-link-link:hover {
+    color: rgb(80, 20, 220);
+}

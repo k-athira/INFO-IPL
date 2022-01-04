@@ -16,32 +16,53 @@ public class Team {
     private String status;
     private String intro_year;
     private String last_played_year;
+    private boolean is_current_champion;
     private int totalMatch;
     private int totalWins;
     private int noLosses;
     private int noDraw;
+    private String color;
 
     public Team() {
 
-    }
-
+    }    
     
-
-    public Team(String name, String status, String intro_year, String last_played_year, int totalMatch, int totalWins,
-            int noLosses, int noDraw) {
+    public Team(String name, String status, String intro_year, String last_played_year, boolean is_current_champion,
+            int totalMatch, int totalWins, int noLosses, int noDraw, String color) {
         this.name = name;
         this.status = status;
         this.intro_year = intro_year;
         this.last_played_year = last_played_year;
+        this.is_current_champion = is_current_champion;
         this.totalMatch = totalMatch;
         this.totalWins = totalWins;
         this.noLosses = noLosses;
         this.noDraw = noDraw;
+        this.color = color;
     }
 
     
 
-    
+    public boolean isIs_current_champion() {
+        return is_current_champion;
+    }
+
+    public void setIs_current_champion(boolean is_current_champion) {
+        this.is_current_champion = is_current_champion;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+
+
     public int getTotalMatch() {
         return totalMatch;
     }

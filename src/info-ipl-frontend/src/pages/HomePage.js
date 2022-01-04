@@ -1,27 +1,26 @@
 import './HomePage.css';
-import React, { Component } from "react";
-import HeaderComponent from "../components/HeaderComponent";
-import FooterComponent from "../components/FooterComponent";
-import ChampionTile from "../components/ChampionsTile";
-import LatestMatchTile from "../components/LatestMatchTile";
+import { React }from "react";
+import { Navigator } from '../components/Navigator'
+import { ChampionsTile } from '../components/ChampionsTile'
 
-class HomePage extends Component {
-    render() {
-        return(
-            <div className="HomePage">
-                <div className='header'>
-                    <HeaderComponent/>
-                </div>
-                <div className='ContentHomePage'>
-                    <div className='Grid 1'><ChampionTile/></div>
-                    <div className='Grid 2'><LatestMatchTile/></div>
-                </div>
-                <div className='footer'>
-                    <FooterComponent/>
-                </div>               
+export const HomePage = () => {
+    return(
+
+        <div className='home-page'>
+            <div className='home-nav-bar'>
+                <Navigator />
             </div>
-        );
-    }
-}
 
-export default HomePage;
+            <div className='home-ipl'>
+                <p className='home-ipl-about'>
+                    IPL is a franchise cricket tournament organised by BCCI.
+                </p>
+
+                <div className='home-first-tile'>
+                    <ChampionsTile/>
+                </div>
+            </div>            
+        </div>
+
+    );
+}

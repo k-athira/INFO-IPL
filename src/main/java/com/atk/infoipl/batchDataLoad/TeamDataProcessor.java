@@ -15,7 +15,7 @@ public class TeamDataProcessor implements ItemProcessor<Team, Team>{
         team.setNoLosses(0);
         team.setTotalMatch(0);
         team.setTotalWins(0);
-
+        team.setIs_current_champion(false);
         return team;
     }
     

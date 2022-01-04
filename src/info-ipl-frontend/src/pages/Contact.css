@@ -1,0 +1,21 @@
+.contact-container {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 940px;
+    margin: auto;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 0 2px 20px rgba(5, 5, 5, 0.1);
+}
+
+.contact-details {
+    padding-top: 90px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.contact-email {
+    padding-top: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}

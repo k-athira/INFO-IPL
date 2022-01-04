@@ -35,14 +35,16 @@ public class BatchConfig {
         "method","umpire1","umpire2"
     };
 
-    private String INSERT_TEAM_SQL = "INSERT INTO TEAM (NAME, STATUS, INTRO_YEAR, LAST_PLAYED_YEAR, TOTAL_MATCH, TOTAL_WINS, NO_LOSSES, NO_DRAW)"
-        + " VALUES (:name, :status, :intro_year, :last_played_year, :totalMatch, :totalWins, :noLosses, :noDraw)";
+    private String INSERT_TEAM_SQL = "INSERT INTO TEAM (NAME, STATUS, INTRO_YEAR, LAST_PLAYED_YEAR, TOTAL_MATCH, TOTAL_WINS, NO_LOSSES, NO_DRAW, IS_CURRENT_CHAMPION)"
+        + " VALUES (:name, :status, :intro_year, :last_played_year, :totalMatch, :totalWins, :noLosses, :noDraw, :is_current_champion)";
 
     private String DIST_TEAM_QUERY = "SELECT DISTINCT TEAM1NAME FROM MATCH";
 
     private String MATCH_SQL = "INSERT INTO MATCH ("
-    + " TEAM1_ID, TEAM2_ID, DATE, VENUE, TOSS_WINNER_ID, OPTED_FOR, WINNER_ID, MAN_OF_THE_MATCH, RESULT, RESULT_MARGIN, TEAM1NAME, TEAM2NAME, WINNER_NAME, TOSS_WINNER_NAME)"
-    + " VALUES (:team1, :team2, :date, :venue, :tossWinner, :optedFor, :winner, :man_of_the_match, :result, :resultMargin, :team1Name, :team2Name, :winnerName, :tossWinnerName)";
+    + " TEAM1_ID, TEAM2_ID, DATE, VENUE, TOSS_WINNER_ID, OPTED_FOR, WINNER_ID, MAN_OF_THE_MATCH,"
+    + " RESULT, RESULT_MARGIN, TEAM1NAME, TEAM2NAME, WINNER_NAME, TOSS_WINNER_NAME)"
+    + " VALUES (:team1, :team2, :date, :venue, :tossWinner, :optedFor, :winner, :man_of_the_match,"
+    + " :result, :resultMargin, :team1Name, :team2Name, :winnerName, :tossWinnerName)";
 
     @Autowired
     public JobBuilderFactory jobBuilderFactory;

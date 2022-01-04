@@ -1,15 +1,11 @@
-.HeaderComponent {
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    justify-content: last baseline;
-    align-items: baseline;
-    padding: 1em;
-    margin-bottom: 2em;
-    background-color: rgb(44, 32, 78);
-    color: #fff;
+.header {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
-
-.logo_main {
-    color: #fff;
+.logo img {
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
 }

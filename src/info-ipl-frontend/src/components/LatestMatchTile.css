@@ -1,7 +1,10 @@
-.LatestMatchTile {
-    background-color: #282c34;
-    color: white;
-    padding: 40px;
-    font-family: Sans-Serif;
-    text-align: center;
+.latest-match-container {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 20px;
+    height: 100px;
+}
+
+.more-matches {
+    justify-items: center;
 }

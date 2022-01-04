@@ -3,12 +3,12 @@ package com.atk.infoipl.controller;
 import java.util.List;
 import java.util.Optional;
 
-import com.atk.infoipl.exception.ResourceNotFoundException;
 import com.atk.infoipl.model.Team;
 import com.atk.infoipl.repository.TeamRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin
 @RestController
 public class TeamController {
 
@@ -35,30 +36,40 @@ public class TeamController {
 
     // get all team
     @GetMapping("/team/all")
-    public ResponseEntity<List<Team>> getTeams(){
+    public ResponseEntity<Iterable<Team>> getTeams(){
         return ResponseEntity.ok(
             this.teamRepository.findAll()
         );
     }
+
+    // get Current Champion
+    @GetMapping("team/currentChampion")
+    public ResponseEntity<List<Team>> getChampions(){
+        return ResponseEntity.ok(
+            this.teamRepository.findCurrentChampion(true)
+        );
+    }
     
     //get team by id
-    @GetMapping("/team/{id}")
-    public ResponseEntity<Team> getTeam(@PathVariable(value = "id") String id){
-        Team team = teamRepository.findById(id)
-            .orElseThrow( ()-> new ResourceNotFoundException("Team Not Found"));
+    @GetMapping("/team/{name}")
+    public ResponseEntity<Team> getTeam(@PathVariable(value = "name") String name){
+        Team team = teamRepository.findByName(name);
         return ResponseEntity.ok(team);
     }
 
     //put team
     @PutMapping("/team/{id}")
     public Team updateTeam(@RequestBody Team newTeam, @PathVariable(value = "id") String id){
-        Team team = teamRepository.findById(id)
-            .orElseThrow( ()-> new ResourceNotFoundException("Team Not Found"));
+
+        Long team_id = Long.parseLong(id);
+
+        Team team = teamRepository.findById(team_id);
 
         team.setName(newTeam.getName());
         team.setIntro_year(newTeam.getIntro_year());
         team.setLast_played_year(newTeam.getLast_played_year());
         team.setStatus(newTeam.getStatus());
+        team.setIs_current_champion(newTeam.isIs_current_champion());
 
         return this.teamRepository.save(team);
     }

@@ -1,0 +1,9 @@
+.team-list-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+	justify-content: center;
+	width: 940px;
+	max-width: 100%;
+	margin: auto;
+}
