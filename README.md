@@ -1,7 +1,9 @@
-# INFO-IPL
-InfoGraphics on IPL
+# INFO-IPL-REACT-APP
+InfoGraphics on IPL.
 
-Following Pages are Included in Version 1.0 of info.ipl
+
+Following Pages are Included in Version 1.0 of info.ipl. 
+This repository is intended for education purpose only.
 
 - HOME
 - TEAMS
